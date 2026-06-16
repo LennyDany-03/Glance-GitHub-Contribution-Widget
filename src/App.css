@@ -93,7 +93,7 @@ body {
     rgba(var(--ring-mid-rgb), calc(var(--widget-ring-alpha, 0.28) * 0.5)) 40%,
     rgba(var(--ring-end-rgb), var(--widget-ring-base-alpha, 1)) 100%
   );
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* ── Widget panel ── */
@@ -256,8 +256,11 @@ body {
   border: 1px solid var(--border);
   border-radius: 9px;
   padding: 5px;
-  z-index: 300;
+  z-index: 500;
   width: 224px;
+  max-height: 210px;
+  overflow-y: auto;
+  overflow-x: hidden;
   box-shadow:
     0 0 0 1px rgba(var(--accent-rgb), 0.07),
     0 8px 28px rgba(0, 0, 0, 0.88);
@@ -267,6 +270,17 @@ body {
 @keyframes menuIn {
   from { opacity: 0; transform: translateY(-5px) scale(0.96); }
   to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+/* thin dark scrollbar inside menus */
+.settings-menu::-webkit-scrollbar,
+.comp-menu::-webkit-scrollbar { width: 3px; }
+.settings-menu::-webkit-scrollbar-track,
+.comp-menu::-webkit-scrollbar-track { background: transparent; }
+.settings-menu::-webkit-scrollbar-thumb,
+.comp-menu::-webkit-scrollbar-thumb {
+  background: rgba(var(--accent-rgb), 0.25);
+  border-radius: 4px;
 }
 
 /* shared title */
@@ -622,8 +636,11 @@ body {
   border: 1px solid var(--border);
   border-radius: 9px;
   padding: 5px;
-  z-index: 300;
+  z-index: 500;
   width: 175px;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
   box-shadow:
     0 0 0 1px rgba(var(--accent-rgb),0.07),
     0 8px 28px rgba(0,0,0,0.88);

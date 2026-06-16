@@ -171,9 +171,9 @@ export default function SettingsMenu({ onLogout }) {
     const root = document.documentElement;
 
     if (open && view === "position") {
-      root.style.setProperty("--widget-menu-bottom-room", "48px");
+      root.style.setProperty("--widget-menu-bottom-room", "60px");
     } else if (open && view === "main") {
-      root.style.setProperty("--widget-menu-bottom-room", "88px");
+      root.style.setProperty("--widget-menu-bottom-room", "200px");
     } else {
       root.style.removeProperty("--widget-menu-bottom-room");
     }
